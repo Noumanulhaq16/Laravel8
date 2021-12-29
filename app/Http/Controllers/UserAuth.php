@@ -21,7 +21,7 @@ class UserAuth extends Controller
             [
                 'name' =>  'required',
                 'email' => 'required|email|unique:users',
-                'password' => 'required|min:6',
+                'password' => 'required|min:8',
                 'confirm_password' => 'required|same:password|min:8',
 
             ]
@@ -37,10 +37,10 @@ class UserAuth extends Controller
             $user->confirm_password = Hash::make($request->confirm_password);
             $user->save();
             $loginuser = Auth::login($user);
-            
+
             // dd(Auth::user());
 
-            return view('welcome');
+            return view('pages.profile_setting');
         }
     }
     function login_page()
@@ -69,16 +69,21 @@ class UserAuth extends Controller
             'password' => $request->password,
         ];
         if (Auth::attempt($credentials)) {
-            return view('welcome');
+            // dd("done");
+            return redirect()->route('profilesetting');
         } else {
             session()->flash('message', 'Invalid credentials');
             session()->flash('messageType', 'danger');
             return redirect()->back()->With('error', "Email Not Found!");
         }
     }
+    public function profilesetting()
+    {
+        return view('pages.profile_setting');
+    }
     public function logout()
     {
-        auth()->logout();
+       Auth::logout();
         return redirect('/login');
     }
 }
