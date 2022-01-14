@@ -43,18 +43,18 @@ License: For each use you must have a valid license purchased only from above li
 			<!--begin::Page-->
 			<div class="page d-flex flex-row flex-column-fluid">
 				<!--begin::Aside-->
-				@include('layout.sidebar')
+				@include('user.layout.sidebar')
 				<!--end::Aside-->
 				<!--begin::Wrapper-->
 				<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
 					<!--begin::Header-->
-                    @include('layout.header')
+                    @include('user.layout.header')
 					<!--end::Header-->
 					<!--begin::Content-->
                     @yield('content')
 					<!--end::Content-->
 					<!--begin::Footer-->
-					@include('layout.footer')
+					@include('user.layout.footer')
 					<!--end::Footer-->
 				</div>
 				<!--end::Wrapper-->
@@ -1699,7 +1699,7 @@ License: For each use you must have a valid license purchased only from above li
 		</div>
 		<!--end::Help drawer-->
 		<!--end::Engage drawers-->
-		
+
 		<!--begin::Scrolltop-->
 		<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
 			<!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->

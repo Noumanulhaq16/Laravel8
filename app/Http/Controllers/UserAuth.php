@@ -12,7 +12,7 @@ class UserAuth extends Controller
 {
     function register_page()
     {
-        return view('pages.auth.register');
+        return view('user.pages.auth.register');
     }
     function sign_up(Request $request)
     {
@@ -40,12 +40,12 @@ class UserAuth extends Controller
 
             // dd(Auth::user());
 
-            return view('pages.profile_setting');
+            return redirect()->route('profilesetting');
         }
     }
     function login_page()
     {
-        return view('pages.auth.login');
+        return view('user.pages.auth.login');
     }
     function login_process(Request $request)
     {
@@ -79,7 +79,7 @@ class UserAuth extends Controller
     }
     public function profilesetting()
     {
-        return view('pages.profile_setting');
+        return view('user.pages.profile_setting');
     }
     public function logout()
     {

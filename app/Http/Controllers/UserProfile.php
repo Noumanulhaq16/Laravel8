@@ -13,7 +13,7 @@ class UserProfile extends Controller
 {
     function profilesetting()
     {
-        return view('pages.profile_setting');
+        return view('user.pages.profile_setting');
     }
     function updateprofile(Request $req)
     {

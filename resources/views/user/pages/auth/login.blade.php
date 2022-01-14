@@ -37,12 +37,7 @@
                     <form class="form w-100" id="kt_sign_in_form" action="{{ route('login_pro') }}"
                         method="POST">
                         @csrf
-                        @if(Session::has('message'))
-                            <div
-                                class="alert alert-danger alert-block">
-                                <strong>{{ Session::get('message') }} </strong>
-                </div>
-                @endif
+p
                 {{-- @if(session('error'))
                     <div class="alert alert-danger">
                         {{ session('error') }}
