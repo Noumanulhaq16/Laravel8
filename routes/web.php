@@ -3,6 +3,7 @@
 use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\UserProfile;
 use App\Http\Controllers\Dashboard;
+use App\Mail\Sample;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,4 +60,9 @@ Route::prefix('user')->namespace('User')->group(function () {
         //routeforview
         Route::get('/dashboard', [Dashboard::class, 'dashboard'])->name('dashboard');
     });
+});
+
+Route::get('/',function()
+{
+    return new Sample();
 });

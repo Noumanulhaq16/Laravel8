@@ -36,10 +36,12 @@ class UserAuth extends Controller
             $user->password = Hash::make($request->password);
             $user->confirm_password = Hash::make($request->confirm_password);
             $user->save();
-            $loginuser = Auth::login($user);
+            $loginuser = Auth::login($user
+        );
 
             // dd(Auth::user());
 
+            MAIL::swnd
             return redirect()->route('profilesetting');
         }
     }
